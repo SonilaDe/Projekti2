@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Hamburger icon styling */
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Show hamburger and hide nav links on smaller screens */
+@media (max-width: 768px) {
+  .hamburger {
+      display: flex;
+      align-items: flex-end;
+     margin-top: -10px;
+  }
+
+  /* Hide navigation links by default on small screens */
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: rgba(0, 0, 0, 0.9);
+      width: 100%;
+      padding: 1rem 0;
+  }
+
+  /* Show nav links when hamburger is active */
+  .nav-links.active {
+      display: flex;
+      
+  }
+
+  .nav-links li {
+      text-align: center;
+      margin: 0.5rem 0;
+  }
+
+  .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+  }
+  .navbar img{
+    width: 40px;
+  }
+}
+.footer {
+    width: 100%;
+    background-color: #111;
+    color: #b8c1ce;
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.social-media a  i{
+    width: 40px;
+    margin-right: 10px;
+    color: #00c1b4;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer-links div {
+    width: 100%;
+    margin-right: 40px;
+}
+
+.footer-links h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px;
+}
+
+.footer-links ul li a {
+    color: #b8c1ce;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: #00c1b4;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  
+  .footer-content div {
+    flex: 1;
+  }
+  
+  h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .live-dot {
+    height: 8px;
+    width: 8px;
+    background-color: #00ff9b;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #ffffff;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #bcd6f0;
+  }
+  
+  .footer-bottom a {
+    color: #00c1b4;
+    text-decoration: none;
+  }
+  
+  .footer-bottom a:hover {
+    text-decoration: underline;
+  }
+
+
+
+
+  header {
+  
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 20px;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-background {
+  position: relative;
+  padding: 20px 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+              
+  border-radius: inherit;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #a88e54;
+}
+
+
+
+body {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.navbar button {
+    margin: 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Align text/icons to the center inside the button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    min-width: 100px;
+    margin-left: auto;  /* Push the button(s) to the right */
+}
+
+
+
+.navbar button span {
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #888;
+}
+
+.navbar button:hover {
+    background-color: #FFD700;
+}
+
+.navbar .active {
+    background-color: #afafab;
+    color: #000;
+    z-index: 1000;
+}
+
+.navbar button:hover .text,
+.navbar .active .text {
+    color: #000;
+}
+
+.navbar button .text {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #666;
+}
+
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1em;
+    padding: 1em;
+    width: 80%;
+}
+
+.menu-item {
+    background-color: #222;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1em;
+    transition: transform 0.3s;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.menu-item p {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.menu-item .price {
+    font-size: 1.2em;
+    color: #FFD700;
+    margin-top: 0.5em;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+  nav ul {
+      display: none; /* Hide the navigation links by default on small screens */
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: #333;
+      flex-direction: column;
+      width: 200px;
+      padding: 1em;
+  }
+  
+  nav ul li {
+      margin-bottom: 0.5em;
+  }
+  
+  nav ul li a {
+      font-size: 1.2em;
+      text-align: left;
+  }
+  
+  .hamburger {
+      display: flex; /* Show hamburger icon */
+  }
+
+  /* Show menu when active */
+  nav.active ul {
+      display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+      width: 120px; /* Smaller logo for mobile */
+  }
+  
+  nav ul li a {
+      font-size: 1em;
+  }
+}
+
+    
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero {
+      height: 300px;
+  }
+
+  .hero-content h1 {
+      font-size: 2em;
+      transform: translateX(-50%); /* Move the text left to hide half */
+      width: 200%; /* Increase the width to make part of it hidden */
+  }
+
+  .hero-content .btn {
+      font-size: 1em;
+      padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+    .navbar button {
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+    }
+    
+    .menu-container {
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+    
+    .menu-item h3 {
+        font-size: 1em;
+    }
+    
+    .menu-item p,
+    .menu-item .price {
+        font-size: 0.9em;
+    }
+}
+@media (max-width: 768px) {
+    .navbar {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns */
+        gap: 1em;
+        width: 100%;
+    }
+    
+    .navbar button {
+        width: 100%; /* Full width of the grid cell */
+        padding: 0.5em 1em;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+    
+    .navbar button {
+        width: 100%; /* Full width of the grid cell */
+        padding: 0.4em 0.8em;
+        font-size: 0.85em;
+    }
+    
+    .navbar button span {
+        font-size: 0.75em;
+    }
+}
+    
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <div class="navbar">
+                <img src="Restaurant-Logo-PNG-Free-Image.png" alt="Restaurant Logo" class="logo">
+               
+                <nav>
+                    <div class="hamburger" >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html ">Home</a></li>
+                      
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <li><a href="menuu.html">Menu</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar -->
+    <div class="navbar">
+        <button onclick="showCategory('special')" id="special-tab" class="active">
+            SPECIAL<br><span>Fresh & Delicious</span>
+        </button>
+        <button onclick="showCategory('breakfast')" id="breakfast-tab">
+            BREAKFAST<br><span>Fresh & Delicious</span>
+        </button>
+        <button onclick="showCategory('lunch')" id="lunch-tab">
+            LUNCH<br><span>Fresh & Delicious</span>
+        </button>
+        <button onclick="showCategory('dinner')" id="dinner-tab">
+            DINNER<br><span>Fresh & Delicious</span>
+        </button>
+        <button onclick="showCategory('drinks')" id="drinks-tab">
+            DRINKS<br><span>Fresh & Delicious</span>
+        </button>
+    </div>
+    
+
+    <!-- Menu Items Grid -->
+    <div class="menu-container" id="menu-container">
+        <!-- Example menu item format -->
+        <div class="menu-item special">
+            <img src="nachocheese.jpg" alt="Nacho cheese">
+            <h3>Nacho cheese</h3>
+            <p>Nacho / Veggies / Oil</p>
+            <div class="price">$10.9</div>
+        </div>
+
+        <div class="menu-item special">
+            <img src="steak bites.jpg" alt="Steak bites">
+            <h3>Steak bites</h3>
+            <p>Steak / Veggies / Oil</p>
+            <div class="price">$20.2</div>
+        </div>
+        <div class="menu-item special">
+            <img src="alfredo pasta.jpg" alt="Alfredo pasta">
+            <h3>Alfredo pasta</h3>
+            <p>Salmon / Veggies / Oil</p>
+            <div class="price">$5.9</div>
+        </div>
+        <div class="menu-item special">
+            <img src="di riso.jpg" alt="Salmon Steak">
+            <h3>Di riso</h3>
+            <p>/ Veggies / Oil</p>
+            <div class="price">$7.2</div>
+        </div>
+
+
+        
+        <div class="menu-item lunch">
+            <img src="di riso.jpg" alt="Baked Potato Pizza">
+            <h3>Di riso</h3>
+            <p>Potato / Bread / Cheese</p>
+            <div class="price">$10</div>
+        </div>
+        <div class="menu-item lunch">
+            <img src="macaroni.jpg" alt="Salmon Steak">
+            <h3>Pasta</h3>
+            <p>Pasta / Oil</p>
+            <div class="price">$4.9</div>
+        </div>
+        <div class="menu-item lunch">
+            <img src="burger.jpg" alt="Salmon Steak">
+            <h3>Burger</h3>
+            <p>Burgre</p>
+            <div class="price">$3.5</div>
+        </div>
+        <div class="menu-item lunch">
+            <img src="steak and patatoes.jpg" alt="Salmon Steak">
+            <h3>Steak and patatoes </h3>
+            <p>Steak / Patatoes / Oil</p>
+            <div class="price">$18.9</div>
+        </div>
+
+        <div class="menu-item dinner">
+            <img src="steak bites.jpg" alt="Salmon Steak">
+            <h3>Steak bites</h3>
+            <p>Steak / Veggies / Oil</p>
+            <div class="price">$23.9</div>
+        </div>   <div class="menu-item dinner">
+            <img src="smokedsalmon.jpg" alt="Salmon Steak">
+            <h3>Smoked salmon</h3>
+            <p>Salmon / Veggies / Oil</p>
+            <div class="price">$16.9</div>
+        </div>   <div class="menu-item dinner">
+            <img src="kimchidumpling.jpg" alt="Salmon Steak">
+            <h3>Kimchi dumpling</h3>
+            <p>Kimchi / Veggies / Oil</p>
+            <div class="price">$11.0</div>
+        </div>   <div class="menu-item dinner">
+            <img src="gluten free sandwich.jpg" alt="Salmon Steak">
+            <h3>Gluten free sandwich</h3>
+            <p>Sandwich</p>
+            <div class="price">$4.6</div>
+        </div>
+
+        <div class="menu-item drinks">
+            <img src="vine1.jpg" alt="Salmon Steak">
+            <h3>Wine</h3>
+            <p>Wine</p>
+            <div class="price">$2.9</div>
+        </div>   <div class="menu-item drinks">
+            <img src="vine2.jpg" alt="Salmon Steak">
+            <h3>Wine</h3>
+            <p>Wine</p>
+            <div class="price">$3.9</div>
+        </div>   <div class="menu-item drinks">
+            <img src="lemonade.jpg" alt="Salmon Steak">
+            <h3>Lemonade</h3>
+            <p>Lemonade</p>
+            <div class="price">$1.2</div>
+        </div>   <div class="menu-item drinks">
+            <img src="Hottea.jpg" alt="Salmon Steak">
+            <h3>Hot tea</h3>
+            <p>Tea</p>
+            <div class="price">$1.9</div>
+        </div>
+
+        <div class="menu-item breakfast">
+            <img src="gluten free sandwich.jpg" alt="Salmon Steak">
+            <h3>Gluten free sandwich</h3>
+            <p> Veggies / Oil</p>
+            <div class="price">$3.9</div>
+        </div>
+        <div class="menu-item breakfast">
+            <img src="mimosapancakes.jpg" alt="Salmon Steak">
+            <h3>Pancakes</h3>
+            <p>Burberry</p>
+            <div class="price">$5.8</div>
+        </div>
+        <div class="menu-item breakfast">
+            <img src="spinach omlete.jpg" alt="Salmon Steak">
+            <h3>Spinach omlete</h3>
+            <p>Spinach/ egg</p>
+            <div class="price">$1.9</div>
+        </div>
+        <div class="menu-item breakfast">
+            <img src="salad.jpg" alt="Salmon Steak">
+            <h3>Salad</h3>
+            <p>Salad / Veggies / Oil</p>
+            <div class="price">$7.9</div>
+        </div>
+        <!-- Add more items for each category -->
+
+    </div>
+    <footer class="footer">
+      
+         
+        <div class="footer-links">
+           
+        </div>
+        <div class="footer-content">
+          <div class="helpful-links">
+            <h3>Helpful Links</h3>
+            <ul>
+              <li><a href="https://www.duetdisplay.com/">FAQs</a></li>
+              <li><a href="https://www.duetdisplay.com/">Support</a></li>
+              <li><a href="https://www.duetdisplay.com/">Live Chat</a> <span class="live-dot"></span></li>
+            </ul>
+          </div>
+          
+          <div class="contact-us">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="mailto:john@doe.com"><i class="fas fa-envelope"></i> john@doe.com</a></li>
+              <li><a href="tel:+0123456789"><i class="fas fa-phone"></i> 0123456789</a></li>
+              <li><a href="#"><i class="fas fa-map-marker-alt"></i> 213 Prishtinë, Kosovë</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href="#"> <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"> <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"> <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#">  <a href="https://www.google.com"><i class="fa-solid fa-globe"></i></a>
+    
+      </div>
+  </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Newsblog. All rights reserved. <a href="#">Terms & Conditions</a> · <a href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    
+    <script>
+         const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+        function showCategory(category) {
+    // Hide all items
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.style.display = 'none';
+    });
+
+    // Show selected category
+    document.querySelectorAll(`.${category}`).forEach(item => {
+        item.style.display = 'block';
+    });
+
+    // Update button styles to indicate active tab
+    document.querySelectorAll('.navbar button').forEach(button => {
+        button.style.backgroundColor = '#fff';
+        button.style.color = '#333';
+    });
+
+    document.getElementById(`${category}-tab`).style.backgroundColor = '#FFD700';
+    document.getElementById(`${category}-tab`).style.color = '#000';
+}
+
+// Show the 'special' category by default on load
+document.addEventListener("DOMContentLoaded", () => {
+    showCategory('special');
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compact Reservation Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+       
+       body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+    margin: 0;
+}
+   
+.footer {
+   
+    width: 100%;
+    background-color: #111;
+    color: #b8c1ce;
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 30px; /* Reduced the margin-top to move the footer higher */
+}
+
+        .social-media a i {
+            width: 40px;
+            margin-right: 10px;
+            color: #00c1b4;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        .footer-content div {
+            flex: 1;
+        }
+
+        h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .live-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #00ff9b;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #ffffff;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #bcd6f0;
+        }
+
+        .footer-bottom a {
+            color: #00c1b4;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+  
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 20px;
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+ 
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('pexels3.jpg') center/cover no-repeat;
+    opacity: 0.3; /* Adjust this value to control the image transparency */
+    z-index: -1;
+}
+.menu-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* Styling for each button */
+    .menu-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #000;
+      background-color: #fff;
+      font-weight: bold;
+      text-align: center;
+      border: 2px solid #000;
+      border-radius: 8px;
+      font-size: 18px;
+      margin-top: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    /* Jagged edges */
+    .menu-button::before,
+    .menu-button::after {
+      content: "";
+      position: absolute;
+      border: 2px solid #000;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .menu-button::before {
+      top: -5px;
+      left: -5px;
+    }
+    .menu-button::after {
+      bottom: -5px;
+      right: -5px;
+    }
+
+    /* Hover effect */
+    .menu-button:hover {
+      background-color: #df90ba;
+      color: #0a0707;
+      border-color: #fff;
+    }
+    .menu-button:hover::before,
+    .menu-button:hover::after {
+      background-color: #080808;
+      border-color: #fff;
+    }
+
+    /* Decorative divider between buttons */
+    .decorative-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .decorative-line::before,
+    .decorative-line::after {
+      content: "";
+      width: 20px;
+      height: 2px;
+      background-color: #fff;
+      margin: 0 10px;
+    }
+    .decorative-line span {
+      font-size: 18px;
+      color: #fff;
+    }
+    .reservation-container {
+  
+    display: flex;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    margin-top: 30px; /* Adjust as necessary to fit the header */
+    flex: 1; /* Allow the container to grow and take up available space */
+
+}
+
+.left-side img {
+    width: 80%;
+    height: 90%;
+    border-radius: 10px 0 0 10px;
+}
+
+.right-side {
+    flex: 1;
+    padding: 20px;
+}
+
+.right-side h1 {
+    font-size: 24px;
+    font-family: "Prompt", serif;
+    margin-bottom: 10px;
+}
+
+.reservation-text {
+    font-family: "Prompt", serif;
+    color: rgb(233, 150, 226);
+    font-weight: bold;
+}
+
+.right-side p {
+    font-family: "Prompt", serif;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+ 
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group.full-width {
+    flex: 100%;
+}
+
+.form-group label {
+    font-family: "Prompt", serif;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+
+
+
+
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    font-family: "Prompt", serif;
+}
+
+
+
+
+
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Hamburger icon styling */
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide navigation links by default on small screens */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  /* Show nav links when hamburger is active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .reservation-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Remove image on smaller screens */
+  .left-side img {
+    display: none;
+  }
+
+  /* Adjust the form to fit better on small screens */
+  .right-side {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .reservation-container {
+    padding: 10px;
+  }
+
+  .right-side h1 {
+    font-size: 20px;
+  }
+
+  .right-side p {
+    font-size: 14px;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Header section, now above the reservation content -->
+    <header>
+        <div class="header-background">
+            <div class="navbar">
+                <img src="Restaurant-Logo-PNG-Free-Image.png" alt="Restaurant Logo" class="logo">
+                <nav>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul class="nav-links"> 
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <li><a href="menuu.html">Menu</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Reservation form section -->
+    <div class="reservation-container">
+        <div class="left-side">
+            <img src="cover2.jpg" alt="Reserved table setup">
+        </div>
+        <div class="right-side">
+            <h1><span class="reservation-text">Reservation</span> Make a reservation</h1>
+            <p>Booking a table online is easy</p>
+            <form id="reservationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name*</label>
+                        <input type="text" id="name" placeholder="Name here" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email*</label>
+                        <input type="email" id="email" placeholder="Email here" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Contact</label>
+                        <input type="tel" id="phone" placeholder="Phone Number here">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date*</label>
+                        <input type="date" id="date" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="timeFrom">From*</label>
+                        <input type="time" id="timeFrom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeTo">To*</label>
+                        <input type="time" id="timeTo" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="guests">Total Guests*</label>
+                        <select id="guests" required>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <!-- Submit button remains inside the form -->
+                    <div class="button-group">
+                        <div class="menu-container">
+                           <button class="menu-button">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <footer class="footer">
+      
+         
+   
+           
+        <div class="footer-content">
+          <div class="helpful-links">
+            <h3>Helpful Links</h3>
+            <ul>
+              <li><a href="https://www.duetdisplay.com/">FAQs</a></li>
+              <li><a href="https://www.duetdisplay.com/">Support</a></li>
+              <li><a href="https://www.duetdisplay.com/">Live Chat</a> <span class="live-dot"></span></li>
+            </ul>
+          </div>
+          
+          <div class="contact-us">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="mailto:john@doe.com"><i class="fas fa-envelope"></i> john@doe.com</a></li>
+              <li><a href="tel:+0123456789"><i class="fas fa-phone"></i> 0123456789</a></li>
+              <li><a href="#"><i class="fas fa-map-marker-alt"></i> 213 Prishtinë, Kosovë</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href="#"> <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"> <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"> <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#">  <a href="https://www.google.com"><i class="fa-solid fa-globe"></i></a>
+    
+      </div>
+  </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Ura e shijes. All rights reserved. <a href="#">Terms & Conditions</a> · <a href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </footer>
+   
+        
+    <script>
+   
+
+  // Select the hamburger icon and the navigation links
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+// Add event listener to toggle the 'active' class
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+document.getElementById('menu-button').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevents the default behavior of the <a> tag
+
+        // Collect form data (optional)
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const date = document.getElementById('date').value;
+        const timeFrom = document.getElementById('timeFrom').value;
+        const timeTo = document.getElementById('timeTo').value;
+        const guests = document.getElementById('guests').value;
+
+        // Show a confirmation alert
+        alert("Reservation Done! Your booking is confirmed.");
+    });
+    </script>
+</body>
+  
+</body>
+
+
+   
+</html>
+

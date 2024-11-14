@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Restaurant</title>
+    <link rel="stylesheet " href="style.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Itim&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Macondo&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+   
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="header-background">
+            <div class="navbar">
+                <img src="Restaurant-Logo-PNG-Free-Image.png" alt="Restaurant Logo" class="logo">
+               
+                <nav>
+                    <div class="hamburger" >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html ">Home</a></li>
+                      
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <li><a href="menuu.html">Menu</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+          <h1>Premium and authetnic recipes</h1>
+          <a href="reservation.html" class="btn">Book a Table</a>
+      </div>
+  </section>
+  <section class="about-us">
+      <div class="about-content">
+          
+         <h2 class="about-title">About Us</h2>
+         <br>
+          <p class="about-text"><span class="hero-secondary-class">
+            At Ura e Shijes, our journey began with a simple yet profound vision – to create a haven for food enthusiasts,<br> a place where flavors come alive, and memories are made.<br> Established in 2008, we embarked on this culinary adventure with the aim of offering a unique blend of delectable cuisine, inviting ambiance, and impeccable service.
+          </span></p>
+      </div>
+      <div class="about-image"><span class="team-member">
+          <img src="staf.jpg" alt="About Us Image"></span>
+      </div>
+  </section>
+    
+  <div class="team-section">
+    <h2>OUR <span>TEAM</span></h2>
+    <div class="divider">🍴</div>
+    <div class="team-container">
+        <div class="team-member">
+            <img src="chef1.jpg" alt="Chef 1">
+        </div>
+        <div class="team-member">
+            <img src="chef2.jpg" alt="Chef 2">
+        </div>
+        <div class="team-member">
+            <img src="chef3.jpg" alt="Chef 3">
+        </div>
+    </div>
+</div>
+    <footer class="footer">
+      
+         
+        <div class="footer-links">
+           
+        </div>
+        <div class="footer-content">
+          <div class="helpful-links">
+            <h3>Helpful Links</h3>
+            <ul>
+              <li><a href="https://www.duetdisplay.com/">FAQs</a></li>
+              <li><a href="https://www.duetdisplay.com/">Support</a></li>
+              <li><a href="https://www.duetdisplay.com/">Live Chat</a> <span class="live-dot"></span></li>
+            </ul>
+          </div>
+          
+          <div class="contact-us">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="mailto:john@doe.com"><i class="fas fa-envelope"></i> john@doe.com</a></li>
+              <li><a href="tel:+0123456789"><i class="fas fa-phone"></i> 0123456789</a></li>
+              <li><a href="#"><i class="fas fa-map-marker-alt"></i> 213 Prishtinë, Kosovë </a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href="#"> <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"> <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"> <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#">  <a href="https://www.google.com"><i class="fa-solid fa-globe"></i></a>
+    
+      </div>
+  </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Ura  Shijes. All rights reserved. <a href="#">Terms & Conditions</a> · <a href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+    // Initialize ScrollReveal with staggered reveal
+    ScrollReveal().reveal('.team-member', {
+            duration: 800,
+            distance: '50px',
+            origin: 'bottom',
+            opacity: 0,
+            interval: 100, // Time delay between each element
+        });
+
+   const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+   

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        body{
+            background-color: #004d4d;
+        }
+        * {
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main container */
+        .contact-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #004d4d;
+            color: white;
+        }
+
+        
+       .footer {
+    background-color: #111;
+    color: #b8c1ce;
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 30px; /* Reduced the margin-top to move the footer higher */
+}
+
+        .social-media a i {
+            width: 40px;
+            margin-right: 10px;
+            color: #00c1b4;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        .footer-content div {
+            flex: 1;
+        }
+
+        h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .live-dot {
+            height: 8px;
+            width: 8px;
+            background-color: #00ff9b;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #ffffff;
+            padding-top: 10px;
+            font-size: 14px;
+            color: #bcd6f0;
+        }
+
+        .footer-bottom a {
+            color: #00c1b4;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Title */
+        .contact-section h1 {
+            font-size: 2.5rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 30px;
+        }
+
+        /* Cards container */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Individual card styling */
+        .card {
+            background-color: #006666;
+            border-radius: 8px;
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Hover effect for cards */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icon styling */
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Card title styling */
+        .card h3 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Card text styling */
+        .card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Form section */
+        .message-section {
+            background-color: #f7f7f7;
+            padding: 50px 20px;
+            color: #333;
+        }
+
+        .message-section h2 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .message-section p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        /* Form styling */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #004d4d;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* Submit button styling */
+        .contact-form button {
+            background-color: #004d4d;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .contact-form button:hover {
+            background-color: #080808;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-background">
+            <div class="navbar">
+                <img src="Restaurant-Logo-PNG-Free-Image.png" alt="Restaurant Logo" class="logo">
+               
+                <nav>
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html ">Home</a></li>
+                      
+                        <li><a href="reservation.html">Reservation</a></li>
+                        <li><a href="menuu.html">Menu</a></li>
+                        <li><a href="contactus.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <h1>GET IN TOUCH</h1>
+
+        <!-- Cards Container -->
+        <div class="cards-container">
+            <!-- Address Card -->
+            <div class="card">
+                <div class="card-icon">📍</div>
+                <h3>ADDRESS</h3>
+                <p>Weatherford Group Consulting<br>Casper, CO 82601</p>
+                <p>Northern Division Office<br>1716 East 2nd Street, Suite 100<br>Casper, WY 82601</p>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="card">
+                <div class="card-icon">📞</div>
+                <h3>PHONE</h3>
+                <p>Weatherford Group Consulting<br>(307) 337-2981</p>
+                <p>24/7 Service Department<br>(800) 248-9573</p>
+                <p>Northern Division Office<br>(307) 237-9335</p>
+            </div>
+
+            <!-- Email Card -->
+            <div class="card">
+                <div class="card-icon">📧</div>
+                <h3>EMAIL</h3>
+                <p>Support via Request<br>help@weatherfordgroup.com</p>
+                <p>Employment Opportunities<br>careers@weatherfordgroup.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Us Section -->
+      <!-- Contact Section -->
+      <section class="contact-section">
+        
+        <div class="cards-container">
+            <!-- (Include the cards for Address, Phone, and Email here, same as the previous code) -->
+        </div>
+    </section>
+
+    <!-- Message Us Section -->
+    <section class="message-section">
+        <h2>Message Us</h2>
+        <p>If you would like to request an emergency or incident, please use the form below.</p>
+        
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Comments</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer class="footer">
+      
+         
+       
+           
+        
+        <div class="footer-content">
+          <div class="helpful-links">
+            <h3>Helpful Links</h3>
+            <ul>
+              <li><a href="https://www.duetdisplay.com/">FAQs</a></li>
+              <li><a href="https://www.duetdisplay.com/">Support</a></li>
+              <li><a href="https://www.duetdisplay.com/">Live Chat</a> <span class="live-dot"></span></li>
+            </ul>
+          </div>
+          
+          <div class="contact-us">
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="mailto:john@doe.com"><i class="fas fa-envelope"></i> john@doe.com</a></li>
+              <li><a href="tel:+0123456789"><i class="fas fa-phone"></i> 0123456789</a></li>
+              <li><a href="#"><i class="fas fa-map-marker-alt"></i> 213 Prishtinë, Kosovë</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-media">
+          <a href="#"> <a href="https://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"> <a href="https://www.twitter.com"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"> <a href="https://instagram.com"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#">  <a href="https://www.google.com"><i class="fa-solid fa-globe"></i></a>
+    
+      </div>
+  </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Ura e Shijes. All rights reserved. <a href="#">Terms & Conditions</a> · <a href="#">Privacy Policy</a></p>
+        </div>
+      </footer>
+    </footer>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+        // JavaScript for form submission
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            // Get form input values
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            // Basic form validation
+            if (!name || !email || !message) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            // Display a confirmation message
+            alert("Thank you, " + name + "! Your message has been sent successfully.");
+
+            // Clear the form
+            document.getElementById("contactForm").reset();
+        });
+    </script>
+
+</body>
+</html>
